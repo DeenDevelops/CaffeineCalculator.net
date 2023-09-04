@@ -1,0 +1,124 @@
+{
+    "beverages": [
+        {
+            "id":1,
+            "name": "Coffee",
+            "size": "8 oz",
+            "caffeine": 95
+        },
+        {
+            "id":2,
+            "name": "Green Tea",
+            "size": "8 oz",
+            "caffeine": 30
+        },
+        {
+            "id":3,
+            "name": "Red Bull",
+            "size": "8 oz",
+            "caffeine": 80
+        },
+        {
+            "id":4,
+            "name": "Coke",
+            "size": "12 oz",
+            "caffeine": 34
+        },
+        {
+            "id":5,
+            "name": "Mountain Dew",
+            "size": "8 oz",
+            "caffeine": 54
+        },
+        {
+            "id":6,
+            "name": "Starbucks Chai Latte",
+            "size": "8 oz",
+            "caffeine": 95
+        },
+        {
+            "id":7,
+            "name": "Hot Chocolate",
+            "size": "8 oz",
+            "caffeine": 10
+        },
+        {
+            "id":8,
+            "name": "Cappuccino",
+            "size": "8 oz",
+            "caffeine": 65
+        },
+        {
+            "id":9,
+            "name": "Mocha",
+            "size": "8 oz",
+            "caffeine": 95
+        },
+        {
+            "id":10,
+            "name": "Dunkin' Iced Coffee",
+            "size": "8 oz",
+            "caffeine": 295
+        },
+        {
+            "id":11,
+            "name": "Latte",
+            "size": "8 oz",
+            "caffeine": 70
+        },
+        {
+            "id":12,
+            "name": "Starbucks Frappuccino",
+            "size": "8 oz",
+            "caffeine": 130
+        },
+        {
+            "id":13,
+            "name": "Chocolate Milk",
+            "size": "8 oz",
+            "caffeine": 5
+        },
+        {
+            "id":14,
+            "name": "Arizona Peach Tea",
+            "size": "8 oz",
+            "caffeine": 51
+        },
+        {
+            "id":15,
+            "name": "Dr. Pepper",
+            "size": "8 oz",
+            "caffeine": 41
+        },
+        {
+            "id":16,
+            "name": "Starbucks Iced Mocha",
+            "size": "8 oz",
+            "caffeine": 175
+        },
+        {
+            "id":17,
+            "name": "Pepsi",
+            "size": "8 oz",
+            "caffeine": 38
+        },
+        {
+            "id":18,
+            "name": "Diet Coke",
+            "size": "8 oz",
+            "caffeine": 46
+        },
+        {
+            "id":19,
+            "name": "Diet Pepsi",
+            "size": "8 oz",
+            "caffeine": 35
+        },
+        {
+            "id":20,
+            "name": "Diet Dr. Pepper",
+            "size": "8 oz",
+            "caffeine": 41
+        }
+    ]
+}
