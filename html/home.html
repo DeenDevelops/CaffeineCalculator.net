@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculatorStyle.css">
     <title>My Web Page</title>
 </head>
 <body>
@@ -19,6 +20,10 @@
     <h1>Select a bevy. =D</h1>
     <div class="calculator">
         <form id="beverageForm">
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput">
+            <div id="suggestionBox"></div>
+
             <label for="beverageSelect">Select an option:</label>
             <select id="beverageSelect" name="option"></select>
             <br>
