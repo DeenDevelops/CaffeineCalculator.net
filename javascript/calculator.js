@@ -46,30 +46,6 @@ document.getElementById('beverageForm').addEventListener('submit', function (eve
     }
 });
 
-// Listen for the "input" event on the search input field
-document.getElementById('searchInput').addEventListener('input', function(event) {
-    const searchTerm = event.target.value.toLowerCase(); // Convert search term to lower case
-    const suggestionBox = document.getElementById('suggestionBox');
-    suggestionBox.innerHTML = ''; // Clear previous suggestions
-
-    // Filter beverage list based on search term
-    const matchingBeverages = beveragesArray.filter(beverage => 
-        beverage.name.toLowerCase().includes(searchTerm)
-    );
-
-    // Create and show new suggestions
-    matchingBeverages.forEach(beverage => {
-        const suggestion = document.createElement('div');
-        suggestion.textContent = beverage.name;
-        suggestion.className = 'suggestion'; // for styling
-        suggestion.addEventListener('click', function() {
-            document.getElementById('searchInput').value = beverage.name; // Auto-fill on click
-            suggestionBox.innerHTML = ''; // Clear suggestions
-        });
-        suggestionBox.appendChild(suggestion);
-    });
-});
-
 // Existing code for form submission
 // ...
 
