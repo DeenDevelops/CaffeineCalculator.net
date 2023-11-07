@@ -26,6 +26,9 @@ function populateDropdown(data) {
     });
 }
 
+function filterBeverages(){
+    
+}
 
 function displayCaffeineAmount() {
     const selectElement = document.getElementById('beverageSelect');
@@ -92,7 +95,7 @@ function bestTimeToStartDrinkingCaffeine(){
     if(!isNaN(timeToWakeUp)){
         timeToWakeUp = timeToWakeUp + 2; //User selected
         if (timeToWakeUp >= 12){
-            period = timeToWakeUp >= 12 ? (period === 'AM' ? 'PM' : 'AM') : period; //
+            period = timeToWakeUp >= 12 ? (period === 'AM' ? 'PM' : 'AM') : period; 
             timeToWakeUp = timeToWakeUp > 12 ? timeToWakeUp - 12 : timeToWakeUp; //If timeToWakeUp is greater than 12, the part after '?' is executed
         }
         const resultElement = document.getElementById('result4');
