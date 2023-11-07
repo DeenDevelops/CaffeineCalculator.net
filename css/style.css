@@ -1,10 +1,20 @@
 body {
   background-color:silver;
+  background-image: url(../png/background2.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: it makes the background image fixed during scroll */
 }
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
+  }
+
+  .topnav .navbar-image {
+    margin-right: auto;
+    height: 40px;
   }
   
   /* Style the links inside the navigation bar */
@@ -25,7 +35,7 @@ body {
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #04AA6D;
+    background-color: burlywood;
     color: white;
   }
 
@@ -43,9 +53,10 @@ body {
 
     margin: 0 auto; /* This will center the container horizontally */
     position: absolute; /* Position absolute to the nearest positioned ancestor or to the body */
-    top: 50%; /* 50% from the top of the screen */
+    top: 40%; /* 50% from the top of the screen */
     left: 50%; /* 50% from the left of the screen */
     transform: translate(-50%, -50%); /* This will offset the container by its own height and width */
+    opacity: .85;
   }
 
   .footer {

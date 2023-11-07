@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calculatorStyle.css">
+    <link rel="icon" type="image/png" href="../png/caffeineMolecule3.png">
     <title>Caffeine Calculator</title>
 </head>
 <body>
@@ -18,9 +19,16 @@
         </nav>
     </header>
     <h1 class="center-text">Welcome to CaffeineCalculator.net</h1>
-    <p class="center-text">Find out how much caffeine your favorite drink has in it. </p>
     <div class="calculator">
         <form id="beverageForm" class="form-container">
+            <div class="center-text">
+                <p class="center-text">Find out how much caffeine your favorite drink has in it. </p>
+            </div>
+            <div class="center-text">
+                <label for="beverageSearch">Search for a beverage:</label>
+                <input type="text" id="beverageSearch" name="search" oninput="filterBeverages()" placeholder="Type to search...">
+            </div>
+            <br>
             <div class="center-text">
                 <label for="beverageSelect">Select a beverage:</label>
                 <select id="beverageSelect" name="option" class="center-text"></select>
@@ -52,7 +60,7 @@
         
     </div>
     <footer class="footer">
-        2023 Deen's Website
+        © 2023 Deen's Website - All rights reserved.
     </footer>
 </body>
 </html>

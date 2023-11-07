@@ -1,34 +1,42 @@
-function fetchDataAndPopulateDropdown() {   //This function is used to fetch data from the json file and pass it into the next function.
+let beveragesData = [];
+
+function fetchDataAndPopulateDropdown() {
     fetch('../json/bevs2.0.json')
         .then(response => response.json())
         .then(data => {
-            populateDropdown(data);
+            // Assuming the data is an object with a 'beverages' array in it
+            beveragesData = data.beverages; // or just 'data' if the array is not nested
+            populateDropdown(beveragesData); // Pass the array to populateDropdown
         })
         .catch(error => {
             console.error('Error fetching JSON data: ', error);
         });
 }
 
+function filterBeverages() {
+    const searchValue = document.getElementById('beverageSearch').value.toLowerCase();
+    if (Array.isArray(beveragesData)) { // Make sure that beveragesData is an array
+        const filteredData = beveragesData.filter(beverage => 
+            beverage.name.toLowerCase().includes(searchValue)
+        );
+        populateDropdown(filteredData); // Call populateDropdown with the filtered data
+    } else {
+        console.error('beveragesData is not an array:', beveragesData);
+    }
+}
 
 function populateDropdown(data) {
     const selectElement = document.getElementById('beverageSelect');
-
-    data.beverages.forEach(beverage => {
+    selectElement.innerHTML = ''; // Clear existing options
+    data.forEach(beverage => {
         const option = document.createElement('option');
-        option.value = beverage.id;
-        option.textContent = beverage.name;
-
-        if (beverage['caffeine'] !== undefined) {
-            option.setAttribute('data-caffeine', beverage['caffeine']);
-        }
-
+        option.value = beverage.id; // Make sure each beverage has an 'id' field
+        option.textContent = beverage.name; // Make sure each beverage has a 'name' field
+        option.setAttribute('data-caffeine', beverage.caffeine); // Assuming 'caffeine' is the property in your JSON data
         selectElement.appendChild(option);
     });
 }
 
-function filterBeverages(){
-    
-}
 
 function displayCaffeineAmount() {
     const selectElement = document.getElementById('beverageSelect');
@@ -44,36 +52,45 @@ function displayCaffeineAmount() {
 }
 
 
-function displayRecommendedCaffeineAmount(){
+function displayRecommendedCaffeineAmount() {
     const selectElement = document.getElementById('beverageSelect');
     const selectedOption = selectElement.options[selectElement.selectedIndex];
     const caffeineAmount = parseInt(selectedOption.getAttribute('data-caffeine'));
-    const reccomendedAmount = Math.floor(200/caffeineAmount);
+    const recommendedAmount = Math.floor(200 / caffeineAmount);
 
-    if (!isNaN(reccomendedAmount) && reccomendedAmount > 0){
-        const resultElement = document.getElementById('result2');
-        resultElement.textContent = `Your reccomended amount of beverages is ${reccomendedAmount} ${selectedOption.textContent}(s) today.`;
-    }
-    if (reccomendedAmount == 0){
-        const resultElement = document.getElementById('result2');
-        resultElement.textContent = `This beverage is very high in caffeine and can not be reccomended.`;
-    }
-    else{
+    const resultElement = document.getElementById('result2');
+
+    if (!isNaN(caffeineAmount)) {
+        if (recommendedAmount > 0) {
+            resultElement.textContent = `Your recommended amount of beverages is ${recommendedAmount} ${selectedOption.textContent}(s) today.`;
+        } else {
+            resultElement.textContent = `This beverage is very high in caffeine and cannot be recommended.`;
+        }
+    } else {
         console.error('Invalid caffeine amount');
     }
 }
 
-function displayMaximumCaffeineAmount(){
+
+function displayMaximumCaffeineAmount() {
     const selectElement = document.getElementById('beverageSelect');
     const selectedOption = selectElement.options[selectElement.selectedIndex];
     const caffeineAmount = parseInt(selectedOption.getAttribute('data-caffeine'));
-    const maxCaffeineAmount = Math.floor(400/caffeineAmount);
+    const maxCaffeineAmount = Math.floor(400 / caffeineAmount);
 
-    if(!isNaN(maxCaffeineAmount && maxCaffeineAmount > 0)){
-        const resultElement = document.getElementById('result3')
+    if (!isNaN(maxCaffeineAmount) && maxCaffeineAmount > 0) {
+        const resultElement = document.getElementById('result3');
         resultElement.textContent = `Your maximum amount of beverages is ${maxCaffeineAmount} ${selectedOption.textContent}(s) today.`;
+    } 
+    else if(maxCaffeineAmount == 0){
+        const resultElement = document.getElementById('result3');
+        resultElement.textContent = `This beverage is very high in caffeine and does not have a maximum recommendation.`
+    }
+    else {
+        console.error('Invalid caffeine amount or no beverages allowed');
     }
 }
+
 
 function populaterforBTTSDC(){
     const timeSelect = document.getElementById('timeSelect');
@@ -103,7 +120,13 @@ function bestTimeToStartDrinkingCaffeine(){
     }
 }
 
-document.addEventListener('DOMContentLoaded',populaterforBTTSDC) // When the page loads, populate the dropdown
+function initializeApp() {
+    fetchDataAndPopulateDropdown();
+    populaterforBTTSDC();
+    document.getElementById('beverageSearch').addEventListener('input', filterBeverages);
+}
+
+document.addEventListener('DOMContentLoaded', initializeApp);
 
 function BeverageFormSubmit(event) { // Function that calls all other functions on button press.
     event.preventDefault();
