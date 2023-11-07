@@ -28,3 +28,33 @@ body {
     background-color: #04AA6D;
     color: white;
   }
+
+  /* Used to center text */
+  .center-text {
+    text-align: center;
+  }
+
+  /* Used to outline form */
+  .form-container{
+    width: 400px; /* or any size you want */
+    border: 2px solid #000000; /* this creates the border, black in this case */
+    background-color: #f0f0f0; /* this sets the background color, light grey here */
+    padding: 20px; /* this adds space inside the square, around the form */
+
+    margin: 0 auto; /* This will center the container horizontally */
+    position: absolute; /* Position absolute to the nearest positioned ancestor or to the body */
+    top: 50%; /* 50% from the top of the screen */
+    left: 50%; /* 50% from the left of the screen */
+    transform: translate(-50%, -50%); /* This will offset the container by its own height and width */
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Your desired background color */
+    color: white; /* Your desired text color */
+    text-align: left; /* Aligns the text to the left */
+    padding: 10px 20px; /* Adjust the padding as needed */
+  }

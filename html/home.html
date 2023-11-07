@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calculatorStyle.css">
-    <title>My Web Page</title>
+    <title>Caffeine Calculator</title>
 </head>
 <body>
     <header>
@@ -17,21 +17,41 @@
         </div>
         </nav>
     </header>
-    <h1>Select a bevy. =D</h1>
+    <h1 class="center-text">Welcome to CaffeineCalculator.net</h1>
+    <p class="center-text">Find out how much caffeine your favorite drink has in it. </p>
     <div class="calculator">
-        <form id="beverageForm">
-            <label for="beverageSelect">Select an option:</label>
-            <select id="beverageSelect" name="option"></select>
+        <form id="beverageForm" class="form-container">
+            <div class="center-text">
+                <label for="beverageSelect">Select a beverage:</label>
+                <select id="beverageSelect" name="option" class="center-text"></select>
+            </div>
             <br>
-            <label for="weight">Enter weight (lbs):</label>
-            <input type="number" id="weightInput" name="weightInput" required>
+            <div class="center-text">
+                <label for="timeSelect">When do you wake up?</label>
+                <select id="timeSelect" name="optionTime"></select>
+                <input type="radio" id="amSelect" name="group1" value="amSelect">
+                <label for="option1">A.M.</label>
+                <input type="radio" id="pmSelect" name="group1" value="pmSelect">
+                <label for="option2">P.M.</label>
+            </div>
             <br>
-            <input type="submit" value="Calculate">
+            <div class="center-text">
+                <input type="submit" value="Calculate">
+            </div>
+            <br>
             <script src = "../javascript/calculator.js"></script>
-            <div id="result"></div>
+            <div class="center-text">
+                <div id="result" class="center-text"></div>
+                <div id="result2" class="center-text"></div>
+                <div id="result3" class="center-text"></div>
+                <div id="result4" class="center-text"></div>
+            </div>
         </form>
     </div>
-    <footer>
+    <div>
+        
+    </div>
+    <footer class="footer">
         2023 Deen's Website
     </footer>
 </body>
