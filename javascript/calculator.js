@@ -51,6 +51,10 @@ function displayRecommendedCaffeineAmount(){
         const resultElement = document.getElementById('result2');
         resultElement.textContent = `Your reccomended amount of beverages is ${reccomendedAmount} ${selectedOption.textContent}(s) today.`;
     }
+    if (reccomendedAmount == 0){
+        const resultElement = document.getElementById('result2');
+        resultElement.textContent = `This beverage is very high in caffeine and can not be reccomended.`;
+    }
     else{
         console.error('Invalid caffeine amount');
     }
@@ -88,7 +92,7 @@ function bestTimeToStartDrinkingCaffeine(){
     if(!isNaN(timeToWakeUp)){
         timeToWakeUp = timeToWakeUp + 2; //User selected
         if (timeToWakeUp >= 12){
-            period = timeToWakeUp >= 13 ? (period === 'AM' ? 'PM' : 'AM') : period; //
+            period = timeToWakeUp >= 12 ? (period === 'AM' ? 'PM' : 'AM') : period; //
             timeToWakeUp = timeToWakeUp > 12 ? timeToWakeUp - 12 : timeToWakeUp; //If timeToWakeUp is greater than 12, the part after '?' is executed
         }
         const resultElement = document.getElementById('result4');
