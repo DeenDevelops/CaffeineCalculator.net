@@ -17,45 +17,47 @@
         </div>
         </nav>
     </header>
-    <div class="calculator">
-        <form id="beverageForm" class="form-container">
-            <div class="center-text">
-                <h1>Caffeine Calculator</h1>
-            </div>
-            <div class="center-text">
-                <p class="center-text">Find out how much caffeine your favorite drink has in it. </p>
-            </div>
-            <div class="center-text">
-                <label for="beverageSearch">Search for a beverage:</label>
-                <input type="text" id="beverageSearch" name="search" oninput="filterBeverages()" placeholder="Type to search...">
-            </div>
-            <br>
-            <div class="center-text">
-                <label for="beverageSelect">Select a beverage:</label>
-                <select id="beverageSelect" name="option" class="center-text"></select>
-            </div>
-            <br>
-            <div class="center-text">
-                <label for="timeSelect">When do you wake up?</label>
-                <select id="timeSelect" name="optionTime"></select>
-                <input type="radio" id="amSelect" name="group1" value="amSelect">
-                <label for="option1">A.M.</label>
-                <input type="radio" id="pmSelect" name="group1" value="pmSelect">
-                <label for="option2">P.M.</label>
-            </div>
-            <br>
-            <div class="center-text">
-                <input type="submit" value="Calculate">
-            </div>
-            <br>
-            <script src = "calculator.js"></script>
-            <div class="center-text">
-                <div id="result" class="center-text"></div>
-                <div id="result2" class="center-text"></div>
-                <div id="result3" class="center-text"></div>
-                <div id="result4" class="center-text"></div>
-            </div>
-        </form>
+    <div class="content-wrapper">
+        <div class="calculator">
+            <form id="beverageForm" class="form-container">
+                <div class="center-text">
+                    <h1>Caffeine Calculator</h1>
+                </div>
+                <div class="center-text">
+                    <p class="center-text">Find out how much caffeine your favorite drink has in it. </p>
+                </div>
+                <div class="center-text">
+                    <label for="beverageSearch">Search for a beverage:</label>
+                    <input type="text" id="beverageSearch" name="search" oninput="filterBeverages()" placeholder="Type to search...">
+                </div>
+                <br>
+                <div class="center-text">
+                    <label for="beverageSelect">Select a beverage:</label>
+                    <select id="beverageSelect" name="option" class="center-text"></select>
+                </div>
+                <br>
+                <div class="center-text">
+                    <label for="timeSelect">When do you wake up?</label>
+                    <select id="timeSelect" name="optionTime"></select>
+                    <input type="radio" id="amSelect" name="group1" value="amSelect">
+                    <label for="option1">A.M.</label>
+                    <input type="radio" id="pmSelect" name="group1" value="pmSelect">
+                    <label for="option2">P.M.</label>
+                </div>
+                <br>
+                <div class="center-text">
+                    <input type="submit" value="Calculate">
+                </div>
+                <br>
+                <script src = "calculator.js"></script>
+                <div class="center-text">
+                    <div id="result" class="center-text"></div>
+                    <div id="result2" class="center-text"></div>
+                    <div id="result3" class="center-text"></div>
+                    <div id="result4" class="center-text"></div>
+                </div>
+            </form>
+        </div>
     </div>
     <footer class="footer">
         <div class="footer-content">
