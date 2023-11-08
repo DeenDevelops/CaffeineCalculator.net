@@ -5,6 +5,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional: it makes the background image fixed during scroll */
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper{
+  flex: 1;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -45,44 +53,39 @@ body {
   }
 
   /* Used to outline form */
-  .form-container{
-    width: 400px; /* or any size you want */
-    border: 2px solid #000000; /* this creates the border, black in this case */
-    background-color: #f0f0f0; /* this sets the background color, light grey here */
-    padding: 20px; /* this adds space inside the square, around the form */
-
-    margin: 0 auto; /* This will center the container horizontally */
-    position: absolute; /* Position absolute to the nearest positioned ancestor or to the body */
-    top: 40%; /* 50% from the top of the screen */
-    left: 50%; /* 50% from the left of the screen */
-    transform: translate(-50%, -50%); /* This will offset the container by its own height and width */
+  .form-container {
+    width: 400px;
+    border: 2px solid #000000;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 0 auto;
+    /* Remove absolute positioning */
+    margin-top: 20px; /* Adjust as necessary */
     opacity: .85;
   }
 
   .general-use-container {
-    border: 2px solid #000000; /* this creates the border, black in this case */
-    background-color: #f0f0f0; /* this sets the background color, light grey here */
-    padding: 20px; /* this adds space inside the square, around the content */
-    
-    margin-top: 70px; /* Adjust this value to push the container down from the navbar */
+    border: 2px solid #000000;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 70px;
     margin-bottom: 30px; /* Adjust this value to provide space above the footer */
-    
-    /* Remove position: absolute; and top/left/transform properties */
-    /* Add the rest of the layout styling here as needed */
     opacity: .85;
   }
   
+  
 
   .footer {
-    position: absolute;
+    margin-top: auto; /* This pushes the footer to the bottom */
+    position: relative; /* Remove absolute positioning */
     bottom: 0;
     left: 0;
-    right: 0; /* Instead of setting width to 100%, set left and right to 0 */
-    background-color: #333; /* Your desired background color */
-    color: white; /* Your desired text color */
-    padding: 10px 20px; /* Adjust the padding as needed */
-    box-sizing: border-box; /* This ensures that padding is included in the width */
-}
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
 
 
 .footer-content {
