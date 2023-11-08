@@ -59,13 +59,40 @@ body {
     opacity: .85;
   }
 
+  .general-use-container {
+    border: 2px solid #000000; /* this creates the border, black in this case */
+    background-color: #f0f0f0; /* this sets the background color, light grey here */
+    padding: 20px; /* this adds space inside the square, around the content */
+    
+    margin-top: 70px; /* Adjust this value to push the container down from the navbar */
+    margin-bottom: 30px; /* Adjust this value to provide space above the footer */
+    
+    /* Remove position: absolute; and top/left/transform properties */
+    /* Add the rest of the layout styling here as needed */
+    opacity: .85;
+  }
+  
+
   .footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    right: 0; /* Instead of setting width to 100%, set left and right to 0 */
     background-color: #333; /* Your desired background color */
     color: white; /* Your desired text color */
-    text-align: left; /* Aligns the text to the left */
     padding: 10px 20px; /* Adjust the padding as needed */
-  }
+    box-sizing: border-box; /* This ensures that padding is included in the width */
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disclaimer-link {
+    color: white; /* or any color that fits your design */
+    text-decoration: none; /* Optional: Removes the underline from the link */
+    /* additional styling as needed */
+}
+
