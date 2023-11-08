@@ -1,7 +1,7 @@
 let beveragesData = [];
 
 function fetchDataAndPopulateDropdown() {
-    fetch('../json/bevs2.0.json')
+    fetch('bevs2.0.json')
         .then(response => response.json())
         .then(data => {
             // Assuming the data is an object with a 'beverages' array in it
