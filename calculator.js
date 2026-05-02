@@ -62,7 +62,7 @@ function displayRecommendedCaffeineAmount() {
 
     if (!isNaN(caffeineAmount)) {
         if (recommendedAmount > 0) {
-            resultElement.textContent = `Estimated upper range based on general guidelines for healthy adults ${recommendedAmount} ${selectedOption.textContent}(s) today.`;
+            resultElement.textContent = `Estimated upper range based on general guidelines for healthy adults:\n ${recommendedAmount} ${selectedOption.textContent}(s) today.`;
         } else {
             resultElement.textContent = `This beverage is very high in caffeine and cannot be recommended.`;
         }
@@ -80,7 +80,7 @@ function displayMaximumCaffeineAmount() {
 
     if (!isNaN(maxCaffeineAmount) && maxCaffeineAmount > 0) {
         const resultElement = document.getElementById('result3');
-        resultElement.textContent = `Estimated maximum amount of beverages based on general guidelines for healthy adults ${maxCaffeineAmount} ${selectedOption.textContent}(s) today.`;
+        resultElement.textContent = `Estimated maximum amount of beverages based on general guidelines for healthy adults:\n ${maxCaffeineAmount} ${selectedOption.textContent}(s) today.`;
     } 
     else if(maxCaffeineAmount == 0){
         const resultElement = document.getElementById('result3');
