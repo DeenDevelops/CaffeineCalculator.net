@@ -116,7 +116,7 @@ function bestTimeToStartDrinkingCaffeine(){
             timeToWakeUp = timeToWakeUp > 12 ? timeToWakeUp - 12 : timeToWakeUp; //If timeToWakeUp is greater than 12, the part after '?' is executed
         }
         const resultElement = document.getElementById('result4');
-        resultElement.textContent = `You should drink your beverage at ${timeToWakeUp} ${period} or later.`
+        resultElement.textContent = `You should drink your beverage(s) at ${timeToWakeUp} ${period} or later.`
     }
 }
 
