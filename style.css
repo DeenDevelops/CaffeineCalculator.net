@@ -99,3 +99,7 @@ body {
     /* additional styling as needed */
 }
 
+#result2, #result3 {
+  white-space: pre-line;
+}
+
